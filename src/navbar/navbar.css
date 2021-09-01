@@ -1,0 +1,15 @@
+.searchbar{
+    display: flex;
+    width: 350px;
+
+}
+::-webkit-input-placeholder {
+    text-align: center;
+    
+ }
+ .minimal{
+     color:rgb(25, 135, 84);
+     text-decoration: none;
+     font-weight: bold;
+     cursor: default;
+ }
