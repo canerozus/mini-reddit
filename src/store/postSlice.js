@@ -18,7 +18,7 @@ export const getPosts = createAsyncThunk(
 const postsSlice = createSlice({
     name: 'posts',
     initialState: {
-        url: null,
+        url: 'popular',
         posts: [],
         loading: false
     },
