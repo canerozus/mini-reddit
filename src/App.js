@@ -1,9 +1,13 @@
-import { Navbar } from './navbar/navbar';
+
+import { Reddit } from './api/reddit';
+import { Navbar } from './components/navbar/navbar';
 
 function App() {
+
   return (
     <div className="App">
       <Navbar/>
+      
           </div>
       );
 }
