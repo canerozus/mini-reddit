@@ -6,11 +6,11 @@ export const getPosts = createAsyncThunk(
     async (arg) => {
         try {
             const data = await Reddit.posts(arg);
+            console.log(data)
             return data;
 
         } catch (error) {
-            console.log({ error })
-
+            throw new Error(error)
         }
     }
 )
@@ -20,7 +20,8 @@ const postsSlice = createSlice({
     initialState: {
         url: 'popular',
         posts: [],
-        loading: false
+        loading: false,
+        error: false
     },
     reducers: {
         setPosts: (state, action) => {
@@ -28,8 +29,9 @@ const postsSlice = createSlice({
         }
     },
     extraReducers: (builder) => {
-        builder.addCase(getPosts.pending, (state, action) => { state.loading = true });
-        builder.addCase(getPosts.fulfilled, (state, action) => { state.loading = false; state.posts = action.payload });
+        builder.addCase(getPosts.pending, (state, action) => { state.loading = true; state.error = false });
+        builder.addCase(getPosts.fulfilled, (state, action) => { state.loading = false; state.posts = action.payload; state.error = false });
+        builder.addCase(getPosts.rejected, (state, action) => {state.error = true; state.loading = false});
     }
 });
 export default postsSlice.reducer;

@@ -1,8 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 import postSlice from "./postSlice";
+import subredditSlice from "./subredditSlice";
 
-export default store = configureStore({
-    reducer:{
-        posts: postSlice
+const store = configureStore({
+    reducer: {
+        posts: postSlice,
+        subReddits: subredditSlice
+
     }
 })
+export default store;
