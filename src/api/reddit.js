@@ -12,10 +12,17 @@ export const Reddit = {
 
     },
     subReddits: async () => {
-        const ressponse = await axios.get("https://www.reddit.com/subreddits.json");
-        const data = ressponse.data.data.children;
-        return (data)
+        try {
+            const ressponse = await axios.get("https://www.reddit.com/subreddits.json?limit=20");
+            const data = ressponse.data.data.children;
+            return (data)
+            
+        } catch (error) {
+            throw new Error(error)
+            
+        }
 
     }
 }
-Reddit.posts()
+Reddit.posts();
+Reddit.subReddits();

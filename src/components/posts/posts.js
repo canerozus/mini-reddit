@@ -15,7 +15,6 @@ export default function Posts() {
 
     useEffect(() => {
         dispatch(getPosts(url))
-        
     }, [dispatch, url])
 
 

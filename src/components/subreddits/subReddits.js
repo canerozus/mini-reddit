@@ -8,6 +8,7 @@ import SubReddit from '../subreddit/SubReddit';
 export default function SubReddits() {
     const subReddits = useSelector( state => state.subReddits.subReddits);
     const loading = useSelector(state => state.subReddits.loading);
+    const error = useSelector(state => state.subReddits.error)
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -16,7 +17,11 @@ export default function SubReddits() {
 
     return (
         <div className="subReddits">
-            {loading ? 'loading' : <SubReddit/>}
+            {loading ? 'loading' : (error ? 'erroR' : 
+            <ul>
+                {subReddits.map(data => <SubReddit data={data.data}/>)}
+            </ul>
+            )}
         </div>
     )
 }

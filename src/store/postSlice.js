@@ -26,6 +26,9 @@ const postsSlice = createSlice({
     reducers: {
         setPosts: (state, action) => {
             state.posts = action.payload;
+        },
+        setUrl: (state,action) => {
+            state.url = action.payload;
         }
     },
     extraReducers: (builder) => {
@@ -34,4 +37,5 @@ const postsSlice = createSlice({
         builder.addCase(getPosts.rejected, (state, action) => {state.error = true; state.loading = false});
     }
 });
+export const {setUrl} = postsSlice.actions;
 export default postsSlice.reducer;
