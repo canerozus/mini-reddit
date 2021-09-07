@@ -1,6 +1,6 @@
 .searchbar{
     display: flex;
-    width: 350px;
+    width: 150%;
 
 }
 ::-webkit-input-placeholder {
@@ -13,3 +13,11 @@
      font-weight: bold;
      cursor: default;
  }
+@media only screen and (max-width: 768px){
+    .container-fluid{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+}
