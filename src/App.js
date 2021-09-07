@@ -10,7 +10,9 @@ function App() {
       <Navbar />
       <div className='reddit-body'>
         <Posts />
+
         <SubReddits/>
+
       </div>
     </div>
   );
