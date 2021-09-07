@@ -13,7 +13,7 @@ export const Reddit = {
     },
     subReddits: async () => {
         try {
-            const ressponse = await axios.get("https://www.reddit.com/subreddits.json?limit=20");
+            const ressponse = await axios.get("https://www.reddit.com/subreddits.json");
             const data = ressponse.data.data.children;
             return (data)
             
@@ -22,7 +22,15 @@ export const Reddit = {
             
         }
 
+    },
+    Comments: async (url) => {
+        try {
+            const response = await axios.get(`https://www.reddit.com${url}.json?limit=25`);
+            const data = response.data[1].data.children;
+            return(data)
+            
+        } catch (error) {
+            throw new Error(error)
+        }
     }
 }
-Reddit.posts();
-Reddit.subReddits();

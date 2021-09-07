@@ -11,10 +11,18 @@ export default function SubReddit(props) {
         dispatch(setUrl(data.url.slice(3)))
     }
     return (
-        <div>
-            <button onClick={clickHandler}>
-                <h4>{data.display_name}</h4>
-            </button>
+        <div className="subreddit">
+            {data.icon_img ? (
+                <button onClick={clickHandler} className="sub-button">
+                    <img src={data.icon_img} alt="icon" />
+                    <h4>{data.display_name}</h4>
+                </button>
+            ) : (
+                <button onClick={clickHandler} className="sub-button">
+                    <span className="empty-icon"></span>
+                    <h4>{data.display_name}</h4>
+                </button>
+            )}
         </div>
     )
 }
