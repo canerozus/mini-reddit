@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { getComments } from '../../store/commentSlice';
 import Comment from '../comment/comment'
+import './comments.css'
 
 export default function Comments(props) {
     const { data } = props;

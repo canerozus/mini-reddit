@@ -8,20 +8,18 @@
     box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2);
 }
 .hr {
-    
     width: 100%;
     text-align: end;
 }
 .comment h4{
-    
-    color: #3D5AF1;
+    color: rgb(25, 135, 84);
     margin: 0;
     padding:1%;
     width: 100%;
 
 }
-.comment p {
-    
+.comment-body {
+
     margin: 0;
     width: 100%;
 }

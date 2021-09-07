@@ -14,7 +14,7 @@ export default function Comment({ data }) {
     <div className="comment">
       <p className="hr">{`${converter(data.created_utc)} hours ago`}</p>
       <h4>{data.author}</h4>
-      <p>{data.body}</p>
+      <p className="comment-body">{data.body}</p>
     </div>
   );
 }
